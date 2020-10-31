@@ -1,5 +1,4 @@
-//@version=4
-study("BTC LONG/SHORT Changes", overlay=true)
+tudy("BTC LONG/SHORT Changes")
 
 shorts = security("BTCUSDSHORTS", timeframe.period, close)
 longs = security("BTCUSDLONGS", timeframe.period, close)
@@ -7,5 +6,5 @@ longs = security("BTCUSDLONGS", timeframe.period, close)
 shorts_change = change(shorts)
 longs_change = change(longs)
 
-plotshape((longs_change >= 200), style=shape.diamond, color=color.green)
-plotshape((shorts_change >= 200), style=shape.diamond, color=color.red)
+plot(shorts_change, color=color.red)
+plot(longs_change, color=color.green)
